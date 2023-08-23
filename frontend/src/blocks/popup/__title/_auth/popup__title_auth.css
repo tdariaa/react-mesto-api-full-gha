@@ -1,0 +1,12 @@
+.popup__title_auth {
+  padding: 0;
+  margin-top: 32px;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__title_auth {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: normal;
+  }
+}

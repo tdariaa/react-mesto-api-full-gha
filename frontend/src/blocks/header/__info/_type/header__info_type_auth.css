@@ -1,0 +1,23 @@
+.header__info_type_auth {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity .4s linear;
+}
+
+.header__info_type_auth:hover {
+  opacity: .6;
+}
+
+@media screen and (max-width: 920px) {
+  .header__info_type_auth {
+    margin: 0 30px 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__info_type_auth {
+    margin: 6px 34px 0 0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}

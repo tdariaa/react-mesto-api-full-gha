@@ -1,0 +1,21 @@
+.header__info_type_signout {
+  border: 0;
+  cursor: pointer;
+  transition: opacity .4s linear;
+}
+
+.header__info_type_signout:hover {
+  opacity: .6;
+}
+
+@media screen and (max-width: 920px) {
+  .header__info_type_signout {
+    margin: 0 30px 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__info_type_signout {
+    margin: 0;
+  }
+}

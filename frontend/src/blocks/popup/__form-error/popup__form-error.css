@@ -1,0 +1,15 @@
+.popup__form-error {
+  min-height: 30px;
+  display: flex;
+  font-size: 12px;
+  font-style: regular;
+  line-height: 15px;
+  color: red;
+  opacity: 0;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.popup__form-error:nth-last-of-type(1) {
+  min-height: 43px;
+}

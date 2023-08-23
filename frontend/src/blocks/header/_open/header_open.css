@@ -1,0 +1,8 @@
+@media screen and (max-width: 600px) {
+  .header_open {
+    border: 1px solid rgba(84, 84, 84, .7);
+    margin: 142px 0 0 0;
+    padding-top: 27px;
+
+  }
+}
