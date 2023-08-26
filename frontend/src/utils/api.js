@@ -1,8 +1,8 @@
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
-    this._headers = options.headers;
-    this._authorization = options.headers.authorization;
+    // this._headers = options.headers;
+    // this._authorization = options.headers.authorization;
   }
 
   _checkResponse(res) {
@@ -15,6 +15,7 @@ class Api {
   // получить список всех карточек в виде массива (GET)
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
+      credentials: 'include',
       headers: {
         authorization: this._authorization
       }
@@ -26,6 +27,7 @@ class Api {
   postNewCard({ name, link }) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         authorization: this._authorization,
         'Content-Type': 'application/json'
@@ -42,6 +44,7 @@ class Api {
   deleteCard(cardID) {
     return fetch(`${this._baseUrl}/cards/${cardID}`, {
       method: 'DELETE',
+      credentials: 'include',
       headers: {
         authorization: this._authorization,
         'Content-Type': 'application/json'
@@ -53,6 +56,7 @@ class Api {
   // получить данные пользователя (GET)
   getProfileData() {
     return fetch(`${this._baseUrl}/users/me`, {
+      credentials: 'include',
       headers: {
         authorization: this._authorization
       }
@@ -68,6 +72,7 @@ class Api {
   patchProfileData({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
+      credentials: 'include',
       headers: {
         authorization: this._authorization,
         'Content-Type': 'application/json'
@@ -84,6 +89,7 @@ class Api {
   patchAvatar(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
+      credentials: 'include',
       headers: {
         authorization: this._authorization,
         'Content-Type': 'application/json'
@@ -101,6 +107,7 @@ class Api {
       // “залайкать” карточку (PUT)
       return fetch(`${this._baseUrl}/cards/${cardID}/likes`, {
         method: 'PUT',
+        credentials: 'include',
         headers: {
           authorization: this._authorization,
           'Content-Type': 'application/json'
@@ -112,6 +119,7 @@ class Api {
       // удалить лайк карточки (DELETE)
       return fetch(`${this._baseUrl}/cards/${cardID}/likes`, {
         method: 'DELETE',
+        credentials: 'include',
         headers: {
           authorization: this._authorization,
           'Content-Type': 'application/json'
@@ -123,11 +131,11 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
-  headers: {
-    authorization: '5ac978e5-969c-4910-b25a-b18a6af9a695',
-    'Content-Type': 'application/json'
-  }
+  baseUrl: 'http://localhost:4000',
+  // headers: {
+  //   authorization: '5ac978e5-969c-4910-b25a-b18a6af9a695',
+  //   'Content-Type': 'application/json'
+  // }
 });
 
 export default api;

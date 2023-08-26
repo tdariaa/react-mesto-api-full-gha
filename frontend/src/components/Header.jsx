@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function Header(props) {
 
   const [open, setOpen] = React.useState(false);
+  console.log(props);
 
   return (
     <header className={`header ${open ? 'header_open' : ''}`}>
@@ -14,7 +15,7 @@ function Header(props) {
           <>
           <button className={`header__burger-button ${open ? 'header__burger-button_open' : ''}`} onClick={()=>{setOpen(!open)}}></button>
             <div className={`header__info-container ${open ? 'header__info-container_open' : ''}`}>
-              {props.userData && <p className="header__info header__info_type_email">{props.userData.data.email}</p>}
+              {props.userData && <p className="header__info header__info_type_email">{props.userData.email}</p>}
               <button className="header__info header__info_type_signout" onClick={() => {props.onExit(); setOpen(false)}}>{props.linkTitle}</button>
             </div>
           </>

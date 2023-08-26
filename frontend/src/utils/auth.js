@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co.';
+export const BASE_URL = 'http://localhost:4000';
 
 function getResponseData(res) {
   console.log(res.ok, res.status);
@@ -14,6 +14,7 @@ export const register = (password, email) => {
     headers: {
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify({
       password,
       email
@@ -31,6 +32,7 @@ export const authorize = (password, email) => {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify({
       password,
       email
@@ -41,16 +43,27 @@ export const authorize = (password, email) => {
     });
 };
 
-export const checkToken = (jwt) => {
+export const checkToken = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${jwt}`,
-    }
+      // 'Authorization': `Bearer ${jwt}`,
+    },
+    credentials: 'include'
   })
     .then((res) => {
       return getResponseData(res)
     })
 };
+
+export const logout = () => {
+  return fetch(`${BASE_URL}/signup`, {
+    method: 'GET',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    credentials: 'include'
+  })
+}
