@@ -19,7 +19,7 @@ const {
   signupValidation,
 } = require('./middlewares/celebrate-validation');
 
-const { PORT = 4000, DB_URL = 'mongodb://localhost:27017/mestodb' } = process.env;
+const { PORT = 3000, DB_URL = 'mongodb://localhost:27017/mestodb' } = process.env;
 const app = express();
 
 const limiter = rateLimit({
