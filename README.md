@@ -9,8 +9,10 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.113.133
 
-Frontend https://...
+Frontend https://tdariaamesto.nomoredomainsicu.ru
 
-Backend https://...
+Backend https://api.tdariaamesto.nomoredomainsicu.ru
+
+Ссылка на репозиторий https://github.com/tdariaa/react-mesto-api-full-gha
