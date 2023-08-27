@@ -35,7 +35,7 @@ mongoose.connect(DB_URL, {
   family: 4,
 });
 
-app.use(cors({ origin: ['http://localhost:3000', 'https://api.tdariaamesto.nomoredomainsicu.ru'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:3000', 'https://tdariaamesto.nomoredomainsicu.ru'], credentials: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
