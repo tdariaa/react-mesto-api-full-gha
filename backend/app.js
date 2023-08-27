@@ -35,7 +35,7 @@ mongoose.connect(DB_URL, {
   family: 4,
 });
 
-app.use(cors({ origin: ['http://localhost:3000'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:3000', 'https://api.tdariaamesto.nomoredomainsicu.ru'], credentials: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -48,6 +48,12 @@ const {
 app.use(cookieParser());
 
 app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', signinValidation, login);
 app.post('/signup', signupValidation, createUser);

@@ -131,11 +131,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://localhost:4000',
-  // headers: {
-  //   authorization: '5ac978e5-969c-4910-b25a-b18a6af9a695',
-  //   'Content-Type': 'application/json'
-  // }
+  // baseUrl: 'http://localhost:4000',
+  baseUrl: 'https://api.tdariaamesto.nomoredomainsicu.ru',
 });
 
 export default api;

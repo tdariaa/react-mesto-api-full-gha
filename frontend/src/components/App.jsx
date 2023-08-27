@@ -180,6 +180,7 @@ function App() {
           navigate('/');
         })
         .catch(function (value) {
+          localStorage.removeItem('jwt');
           setLoggedIn(false);
           console.log('Ошибка:' + value);
         })
