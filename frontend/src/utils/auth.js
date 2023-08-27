@@ -1,7 +1,6 @@
 export const BASE_URL = 'http://localhost:4000';
 
 function getResponseData(res) {
-  console.log(res.ok, res.status);
   if (res.ok) {
     return res.json();
   }

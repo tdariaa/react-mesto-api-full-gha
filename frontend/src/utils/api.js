@@ -57,9 +57,9 @@ class Api {
   getProfileData() {
     return fetch(`${this._baseUrl}/users/me`, {
       credentials: 'include',
-      headers: {
-        authorization: this._authorization
-      }
+      // headers: {
+      //   authorization: this._authorization
+      // }
     })
       .then(this._checkResponse)
   }

@@ -92,7 +92,6 @@ function App() {
   }
 
   function handleCardLike(likes, cardId) {
-    console.log(likes, cardId);
     const isLiked = likes.some(i => i === currentUser._id);
     api.changeLikeCardStatus(cardId, !isLiked)
       .then((newCard) => {
@@ -160,7 +159,7 @@ function App() {
     auth.authorize(password, email)
       .then((data) => {
         if (data) {
-          // localStorage.setItem('jwt', data.token);
+          localStorage.setItem('jwt', data.token);
           setLoggedIn(true);
           navigate('/', { replace: true });
           checkToken();
@@ -172,19 +171,19 @@ function App() {
   }
 
   function checkToken() {
-    // const jwt = localStorage.getItem('jwt');
-    // if (jwt) {
-    auth.checkToken()
-      .then((data) => {
-        setUserData(data);
-        setLoggedIn(true);
-        navigate('/');
-      })
-      .catch(function (value) {
-        setLoggedIn(false);
-        console.log('Ошибка:' + value);
-      })
-    // }
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+      auth.checkToken()
+        .then((data) => {
+          setUserData(data);
+          setLoggedIn(true);
+          navigate('/');
+        })
+        .catch(function (value) {
+          setLoggedIn(false);
+          console.log('Ошибка:' + value);
+        })
+    }
   }
 
   React.useEffect(() => {
@@ -193,7 +192,7 @@ function App() {
   }, []);
 
   function signOut() {
-    // localStorage.removeItem('jwt');
+    localStorage.removeItem('jwt');
     auth.logout();
     navigate('/signup');
     setLoggedIn(false);

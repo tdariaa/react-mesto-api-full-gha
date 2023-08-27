@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 function Header(props) {
 
   const [open, setOpen] = React.useState(false);
-  console.log(props);
 
   return (
     <header className={`header ${open ? 'header_open' : ''}`}>
